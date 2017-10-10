@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { HelloWorldService } from './hello-world.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
     BrowserModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    HelloWorldService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
