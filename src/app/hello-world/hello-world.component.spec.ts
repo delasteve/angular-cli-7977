@@ -10,10 +10,14 @@ describe('HelloWorldComponent', () => {
   beforeEach(async(() => {
     TestBed
       .configureTestingModule({
-        providers: [
-          { provide: HelloWorldService, useValue: new HelloWorldService(null) }
-        ],
         declarations: [HelloWorldComponent]
+      })
+      .overrideComponent(HelloWorldComponent, {
+        set: {
+          providers: [
+            { provide: HelloWorldService, useValue: new HelloWorldService(null) }
+          ],
+        }
       })
       .compileComponents();
   }));
